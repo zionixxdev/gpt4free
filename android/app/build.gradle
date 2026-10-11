@@ -14,6 +14,11 @@ if (versionMatch.find()) {
             + versionMatch.group(2).toInteger() * 100
             + versionMatch.group(3).toInteger()
 }
+// Guard: AGP rejects a non-positive versionCode (e.g. a "0.x.y" fallback).
+if (g4fVersionCode < 1) {
+    g4fVersionCode = 1
+}
+println "[g4f-build] versionName=${g4fVersionName} versionCode=${g4fVersionCode}"
 
 android {
     namespace 'dev.g4f.android'
