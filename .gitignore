@@ -1,0 +1,12 @@
+# g4f Python package (fetched by CI, not committed)
+/g4f/
+
+# Gradle / Android build output
+android/build/
+android/app/build/
+android/.gradle/
+.gradle/
+local.properties
+*.iml
+.idea/
+.cxx/
