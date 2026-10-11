@@ -26,6 +26,14 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      # Chaquopy's Gradle plugin builds against a host Python whose version must
+      # match the target runtime in app/build.gradle (3.11, chosen so the
+      # armeabi-v7a ABI is available).
+      - name: Set up Python 3.11 (Chaquopy build Python)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       # GitHub's Ubuntu runner already ships the Android SDK; this makes sure
       # the exact platform/build-tools this project needs are present.
       - name: Ensure Android SDK components

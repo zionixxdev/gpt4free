@@ -45,6 +45,9 @@ android {
             // 32-bit armeabi-v7a ABI (3.12+ is 64-bit only). Do not raise this
             // to 3.12 while armeabi-v7a is in abiFilters.
             version "3.11"
+            // Host Python used by Chaquopy's Gradle plugin; must match the
+            // target version above (provided by CI via actions/setup-python).
+            buildPython "python3.11"
             pip {
                 install "requests"
                 install "aiohttp"
